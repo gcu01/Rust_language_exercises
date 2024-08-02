@@ -25,4 +25,11 @@ mod tests {
         assert_eq!(11*2, NO_PLAYERS2);
     }
 
+    #[test]
+    fn test_shadowing(){
+        let x = 1_usize;
+        let x = x + 1_usize;
+        assert_eq!(2, x);
+    }
+
 }
