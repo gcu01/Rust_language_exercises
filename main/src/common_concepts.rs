@@ -32,4 +32,12 @@ mod tests {
         assert_eq!(2, x);
     }
 
+    #[test]
+    #[deny(overflowing_literals)]
+    fn test_overflow(){
+        let mut a:u8 = 1;
+        //a = 257;
+        assert!(1>0);
+    }
+
 }
