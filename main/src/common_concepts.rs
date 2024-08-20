@@ -16,7 +16,7 @@ pub mod test_returns {
 
             let mut a:i32 = 1;
             loop {
-                break a;
+                break a
             }
         }
 }
