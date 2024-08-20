@@ -18,7 +18,23 @@ pub mod test_returns {
             loop {
                 break a
             }
+    }
+
+    pub fn test_break()-> i32 {
+        let mut a = 1;
+
+        'first: loop {
+            if a < 5 { a += 1; }
+            if a == 5 {
+                loop {
+                    if true {
+                        break 'first;
+                    }
+                }
+            }
         }
+        a
+    }
 }
 
 #[cfg(test)]
