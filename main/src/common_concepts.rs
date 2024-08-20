@@ -40,4 +40,13 @@ mod tests {
         assert!(1>0);
     }
 
+    #[test]
+    fn test_array(){
+        let a:[i32;5] = [2;5];
+        let m = "I am learning";
+        let aa = [m;4];
+        assert_eq!("I am learning".to_string(), aa[0]);
+        assert_eq!(2, a[2]);
+    }
+
 }
