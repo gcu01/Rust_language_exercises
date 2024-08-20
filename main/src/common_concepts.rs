@@ -81,4 +81,21 @@ mod tests {
         assert_eq!(2, a[2]);
     }
 
+    #[test]
+    fn test_while() {
+        let mut a = 0;
+        let mut b = 0;
+
+        'lbl: loop {
+            if a < 3 { a += 1;}
+            else { break 'lbl;}
+        }
+
+        while b<3 {
+            b += 1;
+        }
+
+        assert_eq!(a, b);
+    }
+
 }
