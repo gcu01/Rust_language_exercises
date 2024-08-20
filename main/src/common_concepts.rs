@@ -5,6 +5,22 @@ mod concepts {
     pub const NO_PLAYERS2: u32 = 11*2;
 }
 
+pub mod test_returns {
+    pub fn test_rtrn1(a: i32) -> i32 {
+
+        let mut a:i32 = a;
+        return a;
+    }
+
+    pub fn test_rtrn2(a: i32) -> i32 {
+
+            let mut a:i32 = 1;
+            loop {
+                break a;
+            }
+        }
+}
+
 #[cfg(test)]
 mod tests {
     use crate::common_concepts::{NO_PLAYERS1, concepts::NO_PLAYERS2};
