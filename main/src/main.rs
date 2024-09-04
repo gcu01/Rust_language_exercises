@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 mod enums;
 
 #[derive(Debug)]
@@ -61,7 +63,45 @@ fn main() {
     let mut strng_o = &mut vv[0];
     strng_o.push_str("string");
     println!("{}", strng_o);
-    
 
+    let mut lst = vec![4,65,2,34,87,6,3,565,0,98,6,71,26, 6, 3, 45];
+    lst.sort();
+
+    println!("median of {lst:?} is: {}", &lst[lst.len()/2]);
+    
+    let mut lst_h: HashMap<&i32, i32> = HashMap::new();
+    let mut count: i32 = 0;
+    let mut flag: bool = false;
+    for id_i32 in &lst {
+        flag = false;
+        for (k, val) in lst_h.iter_mut() {
+            if **k == *id_i32 { 
+                dbg!("**k = {}", **k);
+                *val += 1; 
+                flag = true;
+            }
+        }
+        if flag == false {
+            lst_h.insert(id_i32, 1);
+        }
+        //lst_h.insert(&lst[*i], count);
+    }
+    println!("{lst:?}");
+    println!("{lst_h:?}");
+
+    let mut lst_mode: Vec<i32> = Vec::new();
+    let mut occur: i32 = 0;
+    for (_, val) in &lst_h{
+        if *val > occur {
+            occur = *val;
+        }
+    }
+    println!("occur = {}", occur);
+    for (k, val) in &lst_h {
+        if *val == occur {
+            lst_mode.push(**k);
+        }
+    }
+    println!("mode = {lst_mode:?}");
 }
 
