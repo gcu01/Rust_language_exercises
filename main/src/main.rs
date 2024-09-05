@@ -11,12 +11,13 @@ impl<T, TT> Point<T, TT> {
         &self.x
     }
 
-    fn make_other<L, LL> (&self, other: &Point<L, LL> ) -> Point <&T, &LL> {
+    /* fn make_other<L, LL> (&self, other: &Point<L, LL> ) -> Point <&T, &LL> {
         Point {
             x: &self.x,
             y: &other.y,
         }
     }
+    */
 }
 fn main() {
 
@@ -29,8 +30,8 @@ fn main() {
     let x1: Point<String, i32> = Point{x:"mama".to_string(), y: 10};
     let x2: Point<i32, String> = Point {x: 12, y: "tata".to_string()};
 
-    let mut x3: Point<&str, &str> = Point::make_other(&x1, &x2);
-    println!("{x3:?}");
+    //let mut x3: Point<&str, &str> = Point::make_other(&x1, &x2);
+    //println!("{x3:?}");
     println!("{x1:?}");
 }
 
