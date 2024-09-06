@@ -1,10 +1,16 @@
 use std::io::{self, Read};
 use std::fs::File;
+mod traits_def;
+use traits_def::tr::Summary;
+
+use crate::traits_def::tr::{Newspaper};
+
 #[derive(Debug)]
 struct Point<T, TT> {
     x: T,
     y: TT,
 }
+
 
 impl<T, TT> Point<T, TT> {
     fn get_x(&self) -> &T {
@@ -33,6 +39,10 @@ fn main() {
     //let mut x3: Point<&str, &str> = Point::make_other(&x1, &x2);
     //println!("{x3:?}");
     println!("{x1:?}");
+
+    let mut n: Newspaper = Newspaper {title: "Title_Book".to_string(), content: "This is the content!".to_string()};
+
+    n.intro_summary();
 }
 
 fn work_file() -> Result<String, io::Error> {
